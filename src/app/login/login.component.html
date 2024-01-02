@@ -1,0 +1,102 @@
+<form [formGroup]="loginForm">
+    <div class="main-container">
+        <div class="login-container">
+            <div class="top-bar">
+                <span class="logo"><i>C</i>reative</span>
+                <span class="logo-two">New User? <i routerLink="/signup">Sign Up</i></span>
+            </div>
+            <div class="container main-container-image-form">
+                <div class="row">
+                    <div class="vector-container  col-md-6">
+                        <img src="../../assets/vector.jpg" class="img-fluid" alt="sdasd" id="vector-image" />
+                    </div>
+                    <div class="form-container  col-md-6">
+                        <div class="container heading-container">
+                            <h2>Welcome Back!</h2>
+                            <span>Login to continue</span>
+                        </div>
+                        <div class="container input-container">
+
+                            <div class="input-group mb-3">
+                                <!-- <span class="input-group-text" id="basic-addon1"
+                                    [ngClass]="{'input-span': loginForm.get('username')?.invalid && loginForm.get('username')?.touched}"><i
+                                        class="fa-solid fa-person"></i>
+                                </span>
+                                <input formControlName="username" type="email" autocomplete="off webauthn"
+                                    [ngClass]="{ 'email-input':  loginForm.get('username')?.invalid &&  loginForm.get('username')?.touched }"
+                                    class="form-control form-control-lg" placeholder="Enter Email" aria-label="Username"
+                                    aria-describedby="basic-addon1"> -->
+                                <div class="input-containers"
+                                    [ngClass]="{ 'input-containers-v':  loginForm.get('username')?.invalid &&  loginForm.get('username')?.touched }">
+                                    <input formControlName="username" type="email" class="form-control-lg"
+                                        placeholder="Enter Email" aria-describedby="basic-addon1">
+                                    <span class="icon">
+                                        <i [ngClass]="{'input-span': loginForm.get('username')?.invalid && loginForm.get('username')?.touched}"
+                                            class='fa-solid fa-person'></i>
+                                    </span>
+                                </div>
+                                <div *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched"
+                                    class="invalid">
+                                    Please write a correct Email address.
+                                </div>
+                            </div>
+
+                            <div class="input-group "
+                                [ngClass]="{'mb-3': !(loginForm.get('password')?.invalid && loginForm.get('password')?.touched)}">
+                                <!-- <span class="input-group-text" id="basic-addon1"
+                                    [ngClass]="{'input-span': loginForm.get('password')?.invalid && loginForm.get('password')?.touched}"><i
+                                        class="fa-solid fa-lock"></i></span>
+                                <input autocomplete="off"
+                                    [ngClass]="{ 'email-input':  loginForm.get('password')?.invalid &&  loginForm.get('password')?.touched }"
+                                    formControlName="password" type="password" class="form-control form-control-lg "
+                                    placeholder="Enter Password" aria-label="Username" aria-describedby="basic-addon1"> -->
+                                <div class="input-containers"
+                                    [ngClass]="{'input-containers-v': loginForm.get('password')?.invalid && loginForm.get('password')?.touched}">
+                                    <input formControlName="password" type="password" class=" form-control-lg"
+                                        placeholder="Enter Password" aria-describedby="basic-addon1">
+                                    <span class="icon">
+                                        <i [ngClass]="{'input-span': loginForm.get('password')?.invalid && loginForm.get('password')?.touched}"
+                                            class='fa-solid fa-lock'></i>
+                                    </span>
+                                </div>
+                                <div class="invalid"
+                                    *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+                                    Password must have atleast 8 characters.
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="container submit-contianer">
+                            <div class="forget">
+                                <div class="login">
+                                    <div class="login-btn" (click)="onSubmit()"><span>LOGIN</span></div>
+                                </div>
+                                <div class="forget-pas">
+                                    <div>
+                                        <a href="#"><span>FORGET PASSWORD?</span></a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="container social-contianer">
+                            <span>Login with</span>
+                            <div class="icon-main-container">
+                                <div class="icon-continer">
+                                    <i class="fa-brands fa-google" style="color: #DB4437;"></i>
+                                </div>
+                                <div class="icon-continer">
+                                    <i class="fa-brands fa-facebook" style="color: #316FF6;"></i>
+                                </div>
+                                <div class="icon-continer">
+                                    <i class="fa-brands fa-twitter" style="color: #1DA1F2;"></i>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
